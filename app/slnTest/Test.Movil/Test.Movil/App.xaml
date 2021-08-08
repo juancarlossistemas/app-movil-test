@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Test.Movil.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <x:String x:Key="UrlAPI">http://192.168.1.100/SRES</x:String>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

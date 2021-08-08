@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "lJxeRg3S1K+mH5DP0bKjDv6j9qlRukRzKD91LYEctLi+6DRp+bAcR6mzXSI7DB2YMWmzL+YqNdCZ5Ngdi39sJw==",
+  "dgSpecHash": "Zv8VFNyWxL5nIE5Z9G/qlMH9QOq8hfptIuYL3nahJco9rngtxDbkNjPn5bXnBKy4cujyNC7Xr3O18qWgQFQ6qw==",
   "success": true,
-  "projectFilePath": "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj",
+  "projectFilePath": "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Pc\\.nuget\\packages\\acr.userdialogs\\7.1.0.514\\acr.userdialogs.7.1.0.514.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\xamarin.forms\\5.0.0.2083\\xamarin.forms.5.0.0.2083.nupkg.sha512"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil.Android\\Test.Movil.Android.csproj": {}
+    "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil.Android\\Test.Movil.Android.csproj": {}
   },
   "projects": {
-    "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil.Android\\Test.Movil.Android.csproj": {
+    "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil.Android\\Test.Movil.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil.Android\\Test.Movil.Android.csproj",
+        "projectUniqueName": "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil.Android\\Test.Movil.Android.csproj",
         "projectName": "Test.Movil.Android",
-        "projectPath": "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil.Android\\Test.Movil.Android.csproj",
+        "projectPath": "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil.Android\\Test.Movil.Android.csproj",
         "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-        "outputPath": "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil.Android\\obj\\",
+        "outputPath": "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -34,8 +34,8 @@
         "frameworks": {
           "monoandroid11.0": {
             "projectReferences": {
-              "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj": {
-                "projectPath": "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj"
+              "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj": {
+                "projectPath": "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj"
               }
             }
           }
@@ -44,6 +44,14 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
+            "Acr.UserDialogs": {
+              "target": "Package",
+              "version": "[7.1.0.514, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.7.0, )"
@@ -56,14 +64,14 @@
         }
       }
     },
-    "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj": {
+    "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj",
+        "projectUniqueName": "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj",
         "projectName": "Test.Movil",
-        "projectPath": "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj",
+        "projectPath": "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil\\Test.Movil.csproj",
         "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-        "outputPath": "D:\\ESCRITORIO\\APP LOGIN\\Proyecto App\\slnTest\\Test.Movil\\Test.Movil\\obj\\",
+        "outputPath": "D:\\ESCRITORIO\\GIT APP TEST\\app\\slnTest\\Test.Movil\\Test.Movil\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\VISUAL STUDIO 2019 SHARED\\NuGetPackages",
@@ -98,11 +106,19 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Acr.UserDialogs": {
+              "target": "Package",
+              "version": "[7.1.0.514, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
