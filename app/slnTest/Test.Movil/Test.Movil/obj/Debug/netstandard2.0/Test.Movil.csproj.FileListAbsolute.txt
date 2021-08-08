@@ -1,0 +1,16 @@
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\bin\Debug\netstandard2.0\Test.Movil.deps.json
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\bin\Debug\netstandard2.0\Test.Movil.dll
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\bin\Debug\netstandard2.0\ref\Test.Movil.dll
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\bin\Debug\netstandard2.0\Test.Movil.pdb
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\Test.Movil.csproj.AssemblyReference.cache
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\Views\LoginView.xaml.g.cs
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\Test.Movil.AssemblyInfoInputs.cache
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\Test.Movil.AssemblyInfo.cs
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\Test.Movil.csproj.CoreCompileInputs.cache
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\XamlC.stamp
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\Test.Movil.dll
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\ref\Test.Movil.dll
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\Test.Movil.pdb
+D:\ESCRITORIO\APP LOGIN\Proyecto App\slnTest\Test.Movil\Test.Movil\obj\Debug\netstandard2.0\Views\RegistroView.xaml.g.cs

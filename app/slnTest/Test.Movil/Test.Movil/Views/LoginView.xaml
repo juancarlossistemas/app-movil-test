@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test.Movil.Views.LoginView">
+    <ContentPage.Content>
+        <ScrollView HeightRequest="1500">
+            <Grid>
+                <Image Source="fondo.jpg" Aspect="AspectFill"></Image>
+                <BoxView Color="White" Opacity="0.7"></BoxView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="0" />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="Resources/Images/logo_ucv.png" WidthRequest="100" HeightRequest="100" Margin="0,100,0,30"></Image>
+                    <StackLayout Grid.Row="1" Padding="30,50">
+                        <Entry Placeholder="Correo electrónico" PlaceholderColor="Black" />
+                        <Entry Placeholder="Contraseña" PlaceholderColor="Black" IsPassword="true" />
+                        <Button Text="Iniciar sesión" BackgroundColor="#A88365" BorderRadius="15" TextColor="#FFF"  Command="{Binding ForgotPasswordCommand}" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="¿Olvidaste tu contraseña?" HorizontalOptions="CenterAndExpand"  FontAttributes="Bold" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,20">
+                            <Label Text="Si no tienes una cuenta"  FontAttributes="Bold" />
+                            <Label Text="REGÍSTRATE"  FontAttributes="Bold" TextColor="#1EA2DF">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding RegistrarCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="o"  FontAttributes="Bold" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="30,0">
+                            <Label Text="Accede con tu red social" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                        <Grid RowSpacing="0"
+                        ColumnSpacing="0"
+                        VerticalOptions="EndAndExpand"
+                        HorizontalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="50*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Grid.Row="1" Grid.Column="0" Margin="2"
+                            Image="icon_google.png" Text="Google" TextColor="White" BackgroundColor="#db4a39" FontAttributes="Bold" BorderRadius="10" />
+                            <Button Grid.Row="1" Grid.Column="1" Margin="2"
+                            Image="icon_facebook.png" Text="Facebbok" TextColor="White" BackgroundColor="#3b5998" FontAttributes="Bold" BorderRadius="10"/>
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
