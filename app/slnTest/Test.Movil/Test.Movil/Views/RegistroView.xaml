@@ -62,7 +62,7 @@
                                 Keyboard="Email"
                                 MaxLength="80"
                                 FontSize="{OnPlatform Android=15,iOS=16}"
-                                Text="{Binding EmailTxt, Mode=TwoWay}"
+                                Text="{Binding CorreoTxt, Mode=TwoWay}"
                                 IsEnabled="{Binding IsEnabledTxt}" />
                             </StackLayout>
                         </StackLayout>
@@ -85,7 +85,7 @@
                                 Placeholder="Ejm: Miguel Nieto Paredes"
                                 MaxLength="50"
                                 FontSize="{OnPlatform Android=15,iOS=16}"
-                                Text="{Binding EmailTxt, Mode=TwoWay}"
+                                Text="{Binding NombreTxt, Mode=TwoWay}"
                                 IsEnabled="{Binding IsEnabledTxt}" />
                             </StackLayout>
                         </StackLayout>
@@ -108,7 +108,30 @@
                                 MaxLength="25"
                                 IsPassword="True"
                                 FontSize="{OnPlatform Android=15,iOS=16}"
-                                Text="{Binding PasswordTxt, Mode=TwoWay}"
+                                Text="{Binding ContrasenaTxt, Mode=TwoWay}"
+                                IsEnabled="{Binding IsEnabledTxt}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame
+                    BorderColor="DarkGray"
+                    HasShadow="{OnPlatform Android=true,iOS=false}"
+                    Padding="{OnPlatform Android=6,iOS=0}"
+                    CornerRadius="{OnPlatform Android=7}">
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <StackLayout>
+                                <Label 
+                                Text="Confirmar contraseña" 
+                                FontAttributes="Bold" 
+                                FontSize="{OnPlatform Android=13,iOS=13}"
+                                HorizontalOptions="Start"/>
+                                <Entry
+                                Placeholder="******************"
+                                MaxLength="25"
+                                IsPassword="True"
+                                FontSize="{OnPlatform Android=15,iOS=16}"
+                                Text="{Binding ConfirmarContrasenaTxt, Mode=TwoWay}"
                                 IsEnabled="{Binding IsEnabledTxt}" />
                             </StackLayout>
                         </StackLayout>
@@ -121,7 +144,7 @@
                     CornerRadius="{OnPlatform Android=7}">
                         <StackLayout Orientation="Vertical" Padding="10">
                             <StackLayout    RadioButtonGroup.GroupName="Genero"
-                                            RadioButtonGroup.SelectedValue="{Binding Selection}">
+                                            RadioButtonGroup.SelectedValue="{Binding GeneroRdb}">
                                 <Label 
                                 Text="Género" 
                                 FontAttributes="Bold" 
@@ -147,17 +170,25 @@
                         <StackLayout Orientation="Vertical" Padding="10">
                             <StackLayout>
                                 <Label 
-                                Text="Edad" 
+                                Text="Fecha de nacimiento" 
                                 FontAttributes="Bold" 
                                 FontSize="{OnPlatform Android=13,iOS=13}"
                                 HorizontalOptions="Start"/>
-                                <Entry
+
+                                <DatePicker x:Name="FechaNacDatePicker"
+                                MinimumDate="01/01/1930"
+                                Format="dd/MM/yyyy"
+                                Margin="30, 0, 0, 30"
+                                Date="{Binding FechaNacimientoDtp, Mode=TwoWay}"/>
+                                <!--DateSelected="OnDateSelected" />--> 
+                                            
+                                <!--<Entry
                                 Placeholder="Ejm: 25"
                                 MaxLength="2"
                                 Keyboard="Numeric"
                                 FontSize="{OnPlatform Android=15,iOS=16}"
                                 Text="{Binding PasswordTxt, Mode=TwoWay}"
-                                IsEnabled="{Binding IsEnabledTxt}" />
+                                IsEnabled="{Binding IsEnabledTxt}" />-->
                             </StackLayout>
                         </StackLayout>
                     </Frame>

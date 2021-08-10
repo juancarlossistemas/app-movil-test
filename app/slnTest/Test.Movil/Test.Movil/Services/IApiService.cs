@@ -9,5 +9,7 @@ namespace Test.Movil.Services
     public interface IApiService
     {
         Task<Response> GetListAsync<T>(string urlBase, string servicePrefix, string controller, string metodo);
+
+        Task<Response> PostAsync<T>(string urlBase, string servicePrefix, string controller, string metodo, object objeto);
     }
 }
