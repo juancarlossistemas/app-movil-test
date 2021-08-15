@@ -12,8 +12,8 @@ namespace Api.Test.Entidad
         public string USUARI_T_CORREO { get; set; }
         public string USUARI_T_NOMBRE { get; set; }
         public string USUARI_T_CONTRA { get; set; }
-        public string USUARI_N_GENERO { get; set; }
+        public int USUARI_N_GENERO { get; set; }
         public string USUARI_T_FECNAC { get; set; }
-        public string USUARI_F_ACTIVO { get; set; }
+        public int USUARI_F_ACTIVO { get; set; }
     }
 }

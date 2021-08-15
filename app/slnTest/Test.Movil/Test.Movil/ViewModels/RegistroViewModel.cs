@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Input;
 using Test.Movil.Models;
 using Test.Movil.Responses;
 using Test.Movil.Services;
+using Test.Movil.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -71,6 +73,37 @@ namespace Test.Movil.ViewModels
                 return;
             }
 
+            string mensaje = "";
+            if (string.IsNullOrEmpty(correo)) mensaje += "correo electrónico";
+            if (string.IsNullOrEmpty(nombre)) mensaje += string.IsNullOrEmpty(mensaje) ? "nombre" : ", nombre";
+            if (string.IsNullOrEmpty(contrasena)) mensaje += string.IsNullOrEmpty(mensaje) ? "contraseña" : ", contraseña";            
+            if (string.IsNullOrEmpty(confirmarcontrasena)) mensaje += string.IsNullOrEmpty(mensaje) ? "confirmar contraseña" : ", confirmar contraseña";
+            if (genero == 0) mensaje += string.IsNullOrEmpty(mensaje) ? "género" : ", género";
+            if (!string.IsNullOrEmpty(mensaje))
+            {
+                await App.Current.MainPage.DisplayAlert("Error", "Debe seleccionar y/o ingresar " + mensaje + " para continuar con el registro.", "Accept");
+                return;
+            }
+
+            bool isEmail = Regex.IsMatch(this.correo, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+            if (!isEmail)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "El formato del correo electrónico es incorrecto, revíselo e inténtelo de nuevamente.",
+                    "Accept");
+                return;
+            }
+
+            if (!string.Equals(contrasena, confirmarcontrasena))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "Las contraseñas deben de coincidir,revíselo e inténtelo de nuevamente.",
+                    "Accept");
+                return;
+            }
+
             TG_USUARIO _E = new TG_USUARIO()
             {
                 USUARI_T_CORREO = correo,
@@ -81,7 +114,6 @@ namespace Test.Movil.ViewModels
             };
 
             string url = App.Current.Resources["UrlAPI"].ToString();
-            //UserDialogs.Instance.ShowLoading(title: "Cargando");
             Response response = await _apiService.PostAsync<bool>(
                 url,
                 "/api",
@@ -91,7 +123,6 @@ namespace Test.Movil.ViewModels
 
             if (!response.IsSuccess)
             {
-                //UserDialogs.Instance.HideLoading();
                 await App.Current.MainPage.DisplayAlert(
                     "Error",
                     response.Message,
@@ -99,9 +130,18 @@ namespace Test.Movil.ViewModels
                 return;
             }
 
-            //UserDialogs.Instance.HideLoading();
-            //List<EtapaBE> myProducts = (List<EtapaBE>)response.Result;
-            //Products = new ObservableCollection<EtapaBE>(myProducts);
+            await Application.Current.MainPage.Navigation.PushAsync(new LoginView());
+            await Application.Current.MainPage.DisplayAlert(
+                    "Éxito",
+                    nombre + ", su cuenta ha sido registrado con éxito.",
+                    "Accept");
+            return;
         }
+
+        //private bool validar()
+        //{
+        //    if ()
+        //    return true;
+        //}
     }
 }

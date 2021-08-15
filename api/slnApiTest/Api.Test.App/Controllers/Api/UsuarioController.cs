@@ -7,15 +7,16 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Api.Test.App.Controllers
+namespace Api.Test.App.Controllers.Api
 {
-    [RoutePrefix("api/login")]
-    public class LoginController : ApiController
+    [RoutePrefix("api/usuario")]
+    public class UsuarioController : ApiController
     {
-        
-        [HttpGet]
-        [Route("loginUsuario")]
-        public bool Login(TG_USUARIO _E)
+        TG_USUARIO_LOGICA _L;
+
+        [HttpPost]
+        [Route("registrarUsuario")]
+        public bool Registrar(TG_USUARIO _E)
         {
             _L = new TG_USUARIO_LOGICA();
             return _L.GuardarUsuario(_E);
