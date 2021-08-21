@@ -12,7 +12,8 @@ namespace Api.Test.App.Controllers
     [RoutePrefix("api/login")]
     public class LoginController : ApiController
     {
-        
+        TG_USUARIO_LOGICA _L;
+
         [HttpGet]
         [Route("loginUsuario")]
         public bool Login(TG_USUARIO _E)

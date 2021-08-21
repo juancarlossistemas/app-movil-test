@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TG_LOGIN_DATOS.cs" />
+    <Compile Include="TG_TEST_DATOS.cs" />
     <Compile Include="TG_USUARIO_DATOS.cs" />
   </ItemGroup>
   <ItemGroup>
