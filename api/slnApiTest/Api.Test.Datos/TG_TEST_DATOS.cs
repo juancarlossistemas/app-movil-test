@@ -20,6 +20,7 @@ namespace Api.Test.Datos
                 using (SqlCommand sqlCmd = new SqlCommand("PROC_TG_TEST_LISTAR", cn))
                 {
                     sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    sqlCmd.Parameters.Add(new SqlParameter("@TEST_N_CODIGO", _e.TEST_N_CODIGO));
 
                     using (SqlDataReader reader = sqlCmd.ExecuteReader())
                     {
@@ -51,6 +52,78 @@ namespace Api.Test.Datos
             }
 
             return _lista;
+        }
+
+        public bool GuardarPuntajeTest(TG_SITUACION_RESPUESTA_PUNTAJE _E, SqlConnection cn)
+        {
+            bool seGuardo = false;
+            try
+            {
+                using (SqlCommand sqlCmd = new SqlCommand("PROC_TG_SITUACION_RESPUESTA_PUNTAJE_INSERTAR", cn))
+                {
+                    sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    sqlCmd.Parameters.Add(new SqlParameter("@TEST_N_CODIGO", _E.TEST_N_CODIGO));
+                    sqlCmd.Parameters.Add(new SqlParameter("@USUARI_N_CODIGO", _E.USUARI_N_CODIGO));
+                    sqlCmd.Parameters.Add(new SqlParameter("@SITRES_N_CODIGO", _E.SITRES_N_CODIGO));
+                    sqlCmd.Parameters.Add(new SqlParameter("@SIREPU_D_PUNTAJ", _E.SIREPU_D_PUNTAJ));
+
+                    SqlParameter paramOut = new SqlParameter();
+                    paramOut.Direction = System.Data.ParameterDirection.Output;
+                    paramOut.DbType = System.Data.DbType.Int32;
+                    paramOut.ParameterName = "@PAROUT_T_FILAFE"; //FILAS AFECTADAS
+                    sqlCmd.Parameters.Add(paramOut);
+
+                    sqlCmd.ExecuteNonQuery();
+                    seGuardo = int.Parse(paramOut.Value.ToString()) > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+            }
+
+            return seGuardo;
+        }
+
+        public TG_DIAGNOSTICO Diagnosticar(TG_DIAGNOSTICO _E, SqlConnection cn)
+        {
+            TG_DIAGNOSTICO _edl = null;
+            try
+            {
+                using (SqlCommand sqlCmd = new SqlCommand("PROC_TG_DIAGNOSTICAR", cn))
+                {
+                    sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    sqlCmd.Parameters.Add(new SqlParameter("@USUARI_N_CODIGO", _E.USUARI_N_CODIGO));
+                    sqlCmd.Parameters.Add(new SqlParameter("@TEST_N_CODIGO", _E.TEST_N_CODIGO));
+
+                    using (SqlDataReader reader = sqlCmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            if (reader.Read())
+                            {
+                                _edl = new TG_DIAGNOSTICO()
+                                {
+                                    DIAGNO_N_COGPUN = Convert.ToDecimal(reader["DIAGNO_N_COGPUN"]),
+                                    DIAGNO_N_FISPUN = Convert.ToDecimal(reader["DIAGNO_N_FISPUN"]),
+                                    DIAGNO_N_CONPUN = Convert.ToDecimal(reader["DIAGNO_N_CONPUN"]),
+                                    DIAGNO_N_TOTPUN = Convert.ToDecimal(reader["DIAGNO_N_TOTPUN"]),
+                                    PUNCOG_T_DESCRI = Convert.ToString(reader["PUNCOG_T_DESCRI"]).Trim(),
+                                    PUNFIS_T_DESCRI = Convert.ToString(reader["PUNFIS_T_DESCRI"]).Trim(),
+                                    PUNCON_T_DESCRI = Convert.ToString(reader["PUNCON_T_DESCRI"]).Trim(),
+                                    PUNDIR_T_DESCRI = Convert.ToString(reader["PUNDIR_T_DESCRI"]).Trim(),
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+            }
+
+            return _edl;
         }
     }
 }

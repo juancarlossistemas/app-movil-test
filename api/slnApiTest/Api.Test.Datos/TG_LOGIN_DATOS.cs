@@ -21,7 +21,7 @@ namespace Api.Test.Datos
                 {
                     sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
                     sqlCmd.Parameters.Add(new SqlParameter("@USUARI_T_CORREO", _e.USUARI_T_CORREO));
-                    sqlCmd.Parameters.Add(new SqlParameter("@USUARI_T_CONTRA", _e.USUARI_T_CONTRA));
+                    //sqlCmd.Parameters.Add(new SqlParameter("@USUARI_T_CONTRA", _e.USUARI_T_CONTRA));
 
                     using (SqlDataReader reader = sqlCmd.ExecuteReader())
                     {
@@ -34,6 +34,7 @@ namespace Api.Test.Datos
                                     USUARI_N_CODIGO = Convert.ToInt32(reader["USUARI_N_CODIGO"]),
                                     USUARI_T_NOMBRE = Convert.ToString(reader["USUARI_T_NOMBRE"]).Trim(),
                                     USUARI_T_CORREO = Convert.ToString(reader["USUARI_T_CORREO"]).Trim(),
+                                    USUARI_T_CONTRA = Convert.ToString(reader["USUARI_T_CONTRA"]).Trim(),
                                     USUARI_N_GENERO = Convert.ToInt32(reader["USUARI_N_GENERO"]),
                                 };
                             }

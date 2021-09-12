@@ -17,5 +17,6 @@ namespace Api.Test.Entidad
 	    public int RESPUE_N_CODIGO { get; set; }
 	    public string RESPUE_T_DESCRI { get; set; }
 	    public int SITRES_N_CODIGO { get; set; }
+        public List<TG_SITUACION_RESPUESTA_PUNTAJE> LISTA_L_SIREPU { get; set; }
     }
 }

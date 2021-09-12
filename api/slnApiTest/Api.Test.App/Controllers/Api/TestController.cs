@@ -21,5 +21,13 @@ namespace Api.Test.App.Controllers.Api
             _L = new TG_TEST_LOGICA();
             return _L.ListarTest(_E);
         }
+
+        [HttpPost]
+        [Route("guardarpuntajetest")]
+        public TG_DIAGNOSTICO GuardarPuntajeTest(TG_TEST _E)
+        {
+            _L = new TG_TEST_LOGICA();
+            return _L.GuardarPuntajeTest(_E);
+        }
     }
 }

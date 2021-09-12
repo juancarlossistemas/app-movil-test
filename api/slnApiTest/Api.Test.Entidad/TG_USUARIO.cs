@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Api.Test.Entidad
 {
-    public class TG_USUARIO
+    public class TG_USUARIO : TG_BASE
     {
         public int USUARI_N_CODIGO { get; set; }
         public string USUARI_T_CORREO { get; set; }

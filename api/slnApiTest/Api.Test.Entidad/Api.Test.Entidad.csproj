@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TG_BASE.cs" />
+    <Compile Include="TG_DIAGNOSTICO.cs" />
+    <Compile Include="TG_SITUACION_RESPUESTA_PUNTAJE.cs" />
     <Compile Include="TG_TEST.cs" />
     <Compile Include="TG_USUARIO.cs" />
   </ItemGroup>
