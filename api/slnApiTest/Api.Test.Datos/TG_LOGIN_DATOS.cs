@@ -35,7 +35,8 @@ namespace Api.Test.Datos
                                     USUARI_T_NOMBRE = Convert.ToString(reader["USUARI_T_NOMBRE"]).Trim(),
                                     USUARI_T_CORREO = Convert.ToString(reader["USUARI_T_CORREO"]).Trim(),
                                     USUARI_T_CONTRA = Convert.ToString(reader["USUARI_T_CONTRA"]).Trim(),
-                                    USUARI_N_GENERO = Convert.ToInt32(reader["USUARI_N_GENERO"]),
+                                    GENERO_N_CODIGO = Convert.ToInt32(reader["GENERO_N_CODIGO"]),
+                                    USUARI_N_TESTRE = Convert.ToInt32(reader["USUARI_N_TESTRE"]),
                                 };
                             }
                         }
