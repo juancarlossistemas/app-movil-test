@@ -22,7 +22,7 @@ namespace Api.Test.Datos
                     sqlCmd.Parameters.Add(new SqlParameter("@USUARI_T_CORREO", _E.USUARI_T_CORREO));
                     sqlCmd.Parameters.Add(new SqlParameter("@USUARI_T_NOMBRE", _E.USUARI_T_NOMBRE));
                     sqlCmd.Parameters.Add(new SqlParameter("@USUARI_T_CONTRA", _E.USUARI_T_CONTRA));
-                    sqlCmd.Parameters.Add(new SqlParameter("@USUARI_N_GENERO", _E.USUARI_N_GENERO));
+                    sqlCmd.Parameters.Add(new SqlParameter("@GENERO_N_CODIGO", _E.GENERO_N_CODIGO));
                     sqlCmd.Parameters.Add(new SqlParameter("@USUARI_T_FECNAC", _E.USUARI_T_FECNAC));
 
                     SqlParameter paramOut = new SqlParameter();
