@@ -14,7 +14,7 @@ namespace Api.Test.App.Controllers
     {
         TG_LOGIN_LOGICA _L;
 
-        [HttpGet]
+        [HttpPost]
         [Route("loginUsuario")]
         public TG_USUARIO Login(TG_USUARIO _E)
         {
