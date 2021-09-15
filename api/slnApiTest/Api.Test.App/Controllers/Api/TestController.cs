@@ -16,10 +16,10 @@ namespace Api.Test.App.Controllers.Api
 
         [HttpGet]
         [Route("obtenertest")]
-        public List<TG_TEST> ObtenerTest(TG_TEST _E)
+        public List<TG_TEST> ObtenerTest(int codigotestre)
         {
             _L = new TG_TEST_LOGICA();
-            return _L.ListarTest(_E);
+            return _L.ListarTest(new TG_TEST() { TEST_N_CODIGO = codigotestre });
         }
 
         [HttpPost]
