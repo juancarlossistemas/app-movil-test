@@ -125,5 +125,84 @@ namespace Api.Test.Datos
 
             return _edl;
         }
+
+        public List<TG_TRATAMIENTO> ListarTratamiento(TG_USUARIO _e, SqlConnection cn)
+        {
+            List<TG_TRATAMIENTO> _lista = new List<TG_TRATAMIENTO>();
+
+            try
+            {
+                using (SqlCommand sqlCmd = new SqlCommand("PROC_TG_TRATAMIENTO_LISTAR", cn))
+                {
+                    sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    sqlCmd.Parameters.Add(new SqlParameter("@USUARI_N_CODIGO", _e.USUARI_N_CODIGO));
+
+                    using (SqlDataReader reader = sqlCmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                TG_TRATAMIENTO _el = new TG_TRATAMIENTO()
+                                {
+                                    TRATAM_N_CODIGO = Convert.ToInt32(reader["TRATAM_N_CODIGO"]),
+                                    NIVANS_T_DESCRI = Convert.ToString(reader["NIVANS_T_DESCRI"]).Trim(),
+                                    SESION_T_DESCRI = Convert.ToString(reader["SESION_T_DESCRI"]),
+                                    SEMANA_T_DESCRI = Convert.ToString(reader["SEMANA_T_DESCRI"]).Trim(),
+                                    SEMANA_N_CANDIA = Convert.ToInt32(reader["SEMANA_N_CANDIA"]),
+                                    TECNIC_T_TITULO = Convert.ToString(reader["TECNIC_T_TITULO"]),
+                                };
+                                _lista.Add(_el);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+            }
+
+            return _lista;
+        }
+
+        public List<TG_TECNICA_DETALLE> ListarTecnica(TG_TRATAMIENTO _e, SqlConnection cn)
+        {
+            List<TG_TECNICA_DETALLE> _lista = new List<TG_TECNICA_DETALLE>();
+
+            try
+            {
+                using (SqlCommand sqlCmd = new SqlCommand("TG_TECNICA_LISTAR", cn))
+                {
+                    sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    sqlCmd.Parameters.Add(new SqlParameter("@USUARI_N_CODIGO", _e.USUARI_N_CODIGO));
+                    sqlCmd.Parameters.Add(new SqlParameter("@TRATAM_N_CODIGO", _e.TRATAM_N_CODIGO));
+
+                    using (SqlDataReader reader = sqlCmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                TG_TECNICA_DETALLE _el = new TG_TECNICA_DETALLE()
+                                {
+                                    TECNIC_N_CODIGO = Convert.ToInt32(reader["TECNIC_N_CODIGO"]),
+                                    TECNIC_T_TITULO = Convert.ToString(reader["TECNIC_T_TITULO"]).Trim(),
+                                    TIPCON_N_CODIGO = Convert.ToInt32(reader["TIPCON_N_CODIGO"]),
+                                    TECDET_T_CONTEN = Convert.ToString(reader["TECDET_T_CONTEN"]).Trim(),
+                                };
+                                _lista.Add(_el);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+            }
+
+            return _lista;
+        }
     }
 }

@@ -44,7 +44,9 @@
     <Compile Include="TG_BASE.cs" />
     <Compile Include="TG_DIAGNOSTICO.cs" />
     <Compile Include="TG_SITUACION_RESPUESTA_PUNTAJE.cs" />
+    <Compile Include="TG_TECNICA_DETALLE.cs" />
     <Compile Include="TG_TEST.cs" />
+    <Compile Include="TG_TRATAMIENTO.cs" />
     <Compile Include="TG_USUARIO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

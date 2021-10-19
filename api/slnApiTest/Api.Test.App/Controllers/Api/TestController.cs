@@ -29,5 +29,21 @@ namespace Api.Test.App.Controllers.Api
             _L = new TG_TEST_LOGICA();
             return _L.GuardarPuntajeTest(_E);
         }
+
+        [HttpGet]
+        [Route("obtenertratamiento")]
+        public List<TG_TRATAMIENTO> ObtenerTratamiento(int idUsuario)
+        {
+            _L = new TG_TEST_LOGICA();
+            return _L.ListarTratamiento(new TG_USUARIO() { USUARI_N_CODIGO = idUsuario });
+        }
+
+        [HttpGet]
+        [Route("obtenertecnica")]
+        public List<TG_TECNICA_DETALLE> ObtenerTecnica(int idUsuario, int idTratamiento)
+        {
+            _L = new TG_TEST_LOGICA();
+            return _L.ListarTecnica(new TG_TRATAMIENTO() { USUARI_N_CODIGO = idUsuario, TRATAM_N_CODIGO = idTratamiento });
+        }
     }
 }

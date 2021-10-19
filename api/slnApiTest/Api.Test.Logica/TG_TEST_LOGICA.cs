@@ -56,5 +56,31 @@ namespace Api.Test.Logica
             finally { if (cn.State == ConnectionState.Open) cn.Close(); }
             return _edl;
         }
+
+        public List<TG_TRATAMIENTO> ListarTratamiento(TG_USUARIO _e)
+        {
+            List<TG_TRATAMIENTO> _lista = new List<TG_TRATAMIENTO>();
+            try
+            {
+                cn.Open();
+                _lista = _DATOS_TEST.ListarTratamiento(_e, cn);
+
+            }
+            finally { if (cn.State == ConnectionState.Open) cn.Close(); }
+            return _lista;
+        }
+
+        public List<TG_TECNICA_DETALLE> ListarTecnica(TG_TRATAMIENTO _e)
+        {
+            List<TG_TECNICA_DETALLE> _lista = new List<TG_TECNICA_DETALLE>();
+            try
+            {
+                cn.Open();
+                _lista = _DATOS_TEST.ListarTecnica(_e, cn);
+
+            }
+            finally { if (cn.State == ConnectionState.Open) cn.Close(); }
+            return _lista;
+        }
     }
 }
