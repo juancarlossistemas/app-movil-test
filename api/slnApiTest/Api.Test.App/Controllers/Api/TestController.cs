@@ -45,5 +45,13 @@ namespace Api.Test.App.Controllers.Api
             _L = new TG_TEST_LOGICA();
             return _L.ListarTecnica(new TG_TRATAMIENTO() { USUARI_N_CODIGO = idUsuario, TRATAM_N_CODIGO = idTratamiento });
         }
+
+        [HttpGet]
+        [Route("consultardiagnostico")]
+        public TG_DIAGNOSTICO ConsultarDiagnostico(int idUsuario, int idTest)
+        {
+            _L = new TG_TEST_LOGICA();
+            return _L.ConsultarDiagnostico(new TG_DIAGNOSTICO() { USUARI_N_CODIGO = idUsuario, TEST_N_CODIGO = idTest });
+        }
     }
 }

@@ -82,5 +82,18 @@ namespace Api.Test.Logica
             finally { if (cn.State == ConnectionState.Open) cn.Close(); }
             return _lista;
         }
+
+        public TG_DIAGNOSTICO ConsultarDiagnostico(TG_DIAGNOSTICO _e)
+        {
+            TG_DIAGNOSTICO _en = new TG_DIAGNOSTICO();
+            try
+            {
+                cn.Open();
+                _en = _DATOS_TEST.consultarDiagnostico(_e, cn);
+
+            }
+            finally { if (cn.State == ConnectionState.Open) cn.Close(); }
+            return _en;
+        }
     }
 }

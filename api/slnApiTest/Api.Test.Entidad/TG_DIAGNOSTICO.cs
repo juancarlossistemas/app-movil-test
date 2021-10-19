@@ -10,6 +10,7 @@ namespace Api.Test.Entidad
     {
         public int DIAGNO_N_CODIGO { get; set; }
         public int TEST_N_CODIGO { get; set; }
+        public string TEST_T_DESCRI { get; set; }
         public int USUARI_N_CODIGO { get; set; }
         public decimal DIAGNO_N_COGPUN { get; set; }
         public decimal DIAGNO_N_FISPUN { get; set; }

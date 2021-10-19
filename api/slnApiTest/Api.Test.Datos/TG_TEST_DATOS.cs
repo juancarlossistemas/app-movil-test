@@ -172,7 +172,7 @@ namespace Api.Test.Datos
 
             try
             {
-                using (SqlCommand sqlCmd = new SqlCommand("TG_TECNICA_LISTAR", cn))
+                using (SqlCommand sqlCmd = new SqlCommand("PROC_TG_TECNICA_LISTAR", cn))
                 {
                     sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
                     sqlCmd.Parameters.Add(new SqlParameter("@USUARI_N_CODIGO", _e.USUARI_N_CODIGO));
@@ -203,6 +203,48 @@ namespace Api.Test.Datos
             }
 
             return _lista;
+        }
+
+        public TG_DIAGNOSTICO consultarDiagnostico(TG_DIAGNOSTICO _E, SqlConnection cn)
+        {
+            TG_DIAGNOSTICO _edl = null;
+            try
+            {
+                using (SqlCommand sqlCmd = new SqlCommand("PROC_TG_DIAGNOSTICO_CONSULTAR", cn))
+                {
+                    sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    sqlCmd.Parameters.Add(new SqlParameter("@USUARI_N_CODIGO", _E.USUARI_N_CODIGO));
+                    sqlCmd.Parameters.Add(new SqlParameter("@TEST_N_CODIGO", _E.TEST_N_CODIGO));
+
+                    using (SqlDataReader reader = sqlCmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            if (reader.Read())
+                            {
+                                _edl = new TG_DIAGNOSTICO()
+                                {
+                                    TEST_T_DESCRI = Convert.ToString(reader["TEST_T_DESCRI"]),
+                                    DIAGNO_N_COGPUN = Convert.ToDecimal(reader["DIAGNO_N_COGPUN"]),
+                                    DIAGNO_N_FISPUN = Convert.ToDecimal(reader["DIAGNO_N_FISPUN"]),
+                                    DIAGNO_N_CONPUN = Convert.ToDecimal(reader["DIAGNO_N_CONPUN"]),
+                                    DIAGNO_N_TOTPUN = Convert.ToDecimal(reader["DIAGNO_N_TOTPUN"]),
+                                    PUNCOG_T_DESCRI = Convert.ToString(reader["PUNCOG_T_DESCRI"]).Trim(),
+                                    PUNFIS_T_DESCRI = Convert.ToString(reader["PUNFIS_T_DESCRI"]).Trim(),
+                                    PUNCON_T_DESCRI = Convert.ToString(reader["PUNCON_T_DESCRI"]).Trim(),
+                                    PUNDIR_T_DESCRI = Convert.ToString(reader["PUNDIR_T_DESCRI"]).Trim(),
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+            }
+
+            return _edl;
         }
     }
 }
